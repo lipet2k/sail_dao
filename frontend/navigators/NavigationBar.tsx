@@ -1,7 +1,11 @@
 import PropTypes from "prop-types";
 import * as React from "react";
 import { BottomNavigation, Text } from "react-native-paper";
+
 import Messages from "../pages/Messages";
+import Home from "../pages/Home";
+import Treasury from "../pages/Treasury";
+import Chat from "../pages/Chat";
 
 
 const NavigationBar = () => {
@@ -14,14 +18,14 @@ const NavigationBar = () => {
       unfocusedIcon: "checkbox-blank-badge-outline",
     },
     {
-      key: "events",
-      title: "Events",
-      focusedIcon: "calendar",
-      unfocusedIcon: "calendar-outline",
+      key: "chat",
+      title: "Chat",
+      focusedIcon: "message",
+      unfocusedIcon: "message-outline",
     },
     {
-      key: "profile",
-      title: "Profile",
+      key: "treasury",
+      title: "Treasury",
       focusedIcon: "account",
       unfocusedIcon: "account-outline",
     },
@@ -34,10 +38,10 @@ const NavigationBar = () => {
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
-    home: () => <Text>omething</Text>,
+    home: () => <Home/>,
     messages: () => <Messages/>,
-    search: () => <Text>something</Text>,
-    profile: () => <Text>Something</Text>,
+    treasury: () => <Treasury/>,
+    chat: () => <Chat/>,
   });
 
   return (

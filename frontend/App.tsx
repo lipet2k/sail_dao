@@ -3,12 +3,13 @@ import { PaperProvider } from 'react-native-paper';
 import { View, Text } from 'react-native';
 
 import NavigationBar from './navigators/NavigationBar';
+import Header from './navigators/Header';
 
 export default function App() {
   return (
     <SafeAreaProvider>
       <PaperProvider>
-        <Text> Something </Text>
+        <Header title="Home" />
         <NavigationBar/>
       </PaperProvider>
     </SafeAreaProvider>
