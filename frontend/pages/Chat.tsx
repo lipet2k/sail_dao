@@ -15,10 +15,6 @@ const Chat = () => {
 
   return (
     <View style={styles.container}>
-      <Appbar.Header>
-        <Appbar.BackAction onPress={() => {}} />
-        <Appbar.Content title="Chat" />
-      </Appbar.Header>
       <View style={styles.content}>
         <List.Section>
           <List.Subheader>Chat History</List.Subheader>

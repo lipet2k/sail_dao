@@ -5,9 +5,6 @@ import { Appbar, List } from "react-native-paper";
 const Treasury = () => {
   return (
     <View style={styles.container}>
-      <Appbar.Header>
-        <Appbar.Content title="Treasury" />
-      </Appbar.Header>
       <View style={styles.content}>
         <List.Section>
           <List.Subheader>Available Funds</List.Subheader>

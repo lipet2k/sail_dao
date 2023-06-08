@@ -4,10 +4,7 @@ import { Appbar, Button, Text } from "react-native-paper";
 
 const Home = () => {
   return (
-    <View style={styles.container}>
-      <Appbar.Header>
-        <Appbar.Content title="Home" />
-      </Appbar.Header>
+    <View style={[styles.container, { backgroundColor: "#000000" }]}>
       <View style={styles.content}>
         <Text style={styles.text}>Welcome to the Home Page!</Text>
         <Button mode="contained" onPress={() => console.log("Button pressed")}>

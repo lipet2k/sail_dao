@@ -10,8 +10,8 @@ export default function App() {
     <SafeAreaProvider>
       <PaperProvider>
         <Header title="Home" />
-        <NavigationBar/>
+        <NavigationBar />
       </PaperProvider>
     </SafeAreaProvider>
-  )
+  );
 };
