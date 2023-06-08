@@ -2,46 +2,39 @@ import PropTypes from "prop-types";
 import * as React from "react";
 import { BottomNavigation, Text } from "react-native-paper";
 
-import Messages from "../pages/Messages";
-import Home from "../pages/Home";
 import Treasury from "../pages/Treasury";
-import Chat from "../pages/Chat";
+import CalendarPage from "../pages/CalendarPage";
+import ChatScreen from "../pages/ChatScreen";
 
 
 const NavigationBar = () => {
   const [index, setIndex] = React.useState(0);
   const [routes] = React.useState([
     {
-      key: "home",
-      title: "Home",
-      focusedIcon: "checkbox-blank-outline",
-      unfocusedIcon: "checkbox-blank-badge-outline",
-    },
-    {
-      key: "chat",
-      title: "Chat",
+      key: "comm",
+      title: "Comm",
       focusedIcon: "message",
       unfocusedIcon: "message-outline",
+
     },
     {
-      key: "treasury",
-      title: "Treasury",
+      key: "money",
+      title: "Money",
       focusedIcon: "account",
       unfocusedIcon: "account-outline",
     },
     {
-      key: "messages",
-      title: "Messages",
-      focusedIcon: "message",
-      unfocusedIcon: "message-outline",
-    },
+        key: "calendar",
+        title: "Calendar",
+        focusedIcon: "calendar",
+        unfocusedIcon: "calendar-outline",
+    }
   ]);
 
   const renderScene = BottomNavigation.SceneMap({
-    home: () => <Home/>,
-    messages: () => <Messages/>,
-    treasury: () => <Treasury/>,
-    chat: () => <Chat/>,
+    money: () => <Treasury/>,
+    comm: () => <ChatScreen/>,
+    calendar: () => <CalendarPage/>,
   });
 
   return (
@@ -50,6 +43,7 @@ const NavigationBar = () => {
       onIndexChange={setIndex}
       renderScene={renderScene}
       labeled={false}
+      barStyle={{ backgroundColor: "black" }}
     />
   );
 };
