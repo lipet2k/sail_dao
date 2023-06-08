@@ -5,31 +5,37 @@ import { Appbar, List } from "react-native-paper";
 const Treasury = () => {
   return (
     <View style={styles.container}>
-      <View style={styles.content}>
-        <List.Section>
-          <List.Subheader>Available Funds</List.Subheader>
+      <Appbar.Header style={styles.header}>
+        <Appbar.BackAction onPress={() => {}} color="white" />
+        <Appbar.Content title="Your Account" color="white" />
+      </Appbar.Header>
+
+      <View style={styles.expenseContainer}>
+        <List.Section title="Expenses">
           <List.Item
-            title="Bitcoin (BTC)"
-            description="Current balance: 5.23 BTC"
-            left={() => <List.Icon icon="currency-btc" />}
+            title="Cost of Goods Sold"
+            description="$1000"
+            left={(props) => <List.Icon {...props} icon="arrow-down" />}
           />
           <List.Item
-            title="Ethereum (ETH)"
-            description="Current balance: 10.75 ETH"
-            left={() => <List.Icon icon="currency-eth" />}
+            title="Rent for Vending Machine Space"
+            description="$200"
+            left={(props) => <List.Icon {...props} icon="arrow-down" />}
           />
         </List.Section>
-        <List.Section>
-          <List.Subheader>Recent Transactions</List.Subheader>
+      </View>
+
+      <View style={styles.incomeContainer}>
+        <List.Section title="Income">
           <List.Item
-            title="Received BTC"
-            description="0.5 BTC from John Doe"
-            left={() => <List.Icon icon="arrow-bottom-right" />}
+            title="Gross Sales"
+            description="$3000"
+            left={(props) => <List.Icon {...props} icon="arrow-up" />}
           />
           <List.Item
-            title="Sent ETH"
-            description="2.25 ETH to Jane Smith"
-            left={() => <List.Icon icon="arrow-top-right" />}
+            title="Freelancing"
+            description="$500"
+            left={(props) => <List.Icon {...props} icon="arrow-up" />}
           />
         </List.Section>
       </View>
@@ -41,9 +47,19 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  content: {
+  header: {
+    backgroundColor: "black",
+    marginTop: 0,
+  },
+  expenseContainer: {
     flex: 1,
     padding: 16,
+    backgroundColor: "#f8f8f8",
+  },
+  incomeContainer: {
+    flex: 1,
+    padding: 16,
+    backgroundColor: "#fff",
   },
 });
 

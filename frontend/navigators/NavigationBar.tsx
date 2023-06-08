@@ -20,8 +20,8 @@ const NavigationBar = () => {
     {
       key: "money",
       title: "Money",
-      focusedIcon: "account",
-      unfocusedIcon: "account-outline",
+      focusedIcon: "cash",
+      unfocusedIcon: "cash-100",
     },
     {
         key: "calendar",
