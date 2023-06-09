@@ -6,12 +6,17 @@ import React, { useState } from 'react';
 import NavigationBar from './navigators/NavigationBar';
 import Header from './navigators/Header';
 
+import solanaWeb3 from "@solana/web3.js";
+
+import Connect2Phantom from "./components/Connect2Phantom";
+
 export default function App() {
   const [page, setPage] = React.useState("Chat");
   return (
     <SafeAreaProvider>
       <PaperProvider>
         <NavigationBar />
+        <Connect2Phantom />
       </PaperProvider>
     </SafeAreaProvider>
   );
